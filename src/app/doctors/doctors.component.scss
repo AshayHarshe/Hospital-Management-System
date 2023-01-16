@@ -1,0 +1,243 @@
+
+// * * * * * * * * * * * crud heading * * * * * * * * * * *
+
+.middle .headingCard
+{
+    width: 70%;
+    height: 60px;
+    margin-left: 16%;
+    margin-top: 6%;
+    border: none;
+    color: white;
+    background-image: linear-gradient(to right, rgb(25, 133, 112) , rgb(3, 56, 45));
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+// .headingCard .cd-body
+// {
+//     margin: auto;
+//     font-weight: 700;
+//     font-size: 50px;
+// }
+
+.cd-body h1
+{
+    margin: auto;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+// * * * * * * * * * * * crud heading end * * * * * * * * * * *
+
+// crud start
+
+.fieldHead .card1
+{
+    font-size: 40px;
+    font-weight: 700;
+    border: none;
+    margin-left: 20px;
+    color: rgb(3, 56, 45);
+    text-shadow: 2px 2px rgb(220, 213, 213);
+}
+
+.btn3
+{
+    float: right;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 100px;
+    font-weight: 500;
+    color: white;
+    border: none;
+    background-image: linear-gradient(to right, rgb(14, 118, 97) , rgb(3, 56, 45));
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+// table
+
+.table
+{
+    margin-top: 5px;
+    margin-bottom: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn4
+{
+    background-color: white;
+    border-color: rgb(3, 56, 45);
+    padding: 4px 20px;
+    font-weight: 500;
+}
+
+.btn5
+{
+    color: white;
+    // background-color: rgb(3, 56, 45);
+    background-image: linear-gradient(to right, rgb(21, 196, 161) , rgb(23, 141, 117));
+    padding: 4px 20px;
+    font-weight: 500;
+    border: none;
+}
+
+// .btnpatient 
+// {
+//     margin-left: 30px;
+// }
+
+
+
+
+
+// login template
+
+
+
+
+
+
+
+.modal-header .modal-title
+{
+    font-weight: 700;
+    font-size: 35px;
+    color: rgb(9, 90, 75);
+    margin-left: 50px;
+}
+
+.modal-body .form-text
+{
+    font-size: 20px;
+    text-align: center;
+}
+
+.modal-body .form-control
+{
+    width: 80%;
+    padding: 13px 12px;
+    margin-left: 44px;
+    border: 1px solid rgb(18, 131, 110);
+}
+
+.modal-body img
+{
+    width: 30px;
+    float: right;
+    margin-right: 50px;
+    color: red;
+}
+
+.modal-body .d-grid .btn6
+{
+    width: 80%;
+    margin-left: 44px;
+    border-radius: 20px;
+    font-weight: 500;
+    border: none;
+    background-image: linear-gradient(to right, rgb(14, 118, 97) , rgb(5, 78, 63));
+}
+
+.modal-body a
+{
+    color: rgb(4, 48, 39);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.modal-body .forgotForm
+{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5%;
+}
+
+
+
+
+
+
+
+//  * * * * * * * * Registration template * * * * * * * *
+
+
+
+
+.modal-header .regHead
+{
+    margin-left: 5px;
+}
+
+.modal-body .Rtext
+{
+    font-size: 18px;
+    font-weight: 700;
+    float: left;
+    margin-left: -10px;
+    margin-top: -20px;
+    color: rgb(29, 184, 153);
+}
+
+.modal-body .Rtext span
+{
+    color: rgb(20, 155, 128);
+    font-size: 30px;
+    font-weight: 800;
+    margin-left: 60px;
+}
+
+// .modal-body .regform
+// {
+//     margin-top: 1%;
+// }
+
+.modal-body .form-select
+{
+    width: 80%;
+    padding: 13px 12px;
+    margin-left: 44px;
+    color: rgb(18, 131, 110);
+    border-color: rgb(18, 131, 110);
+}
+
+.modal-body .form-label
+{
+    margin-left: 44px;
+    font-weight: 500;
+}
+
+.modal-body textarea
+{
+    width:373px;
+    height:100px;
+    margin-left: 44px;
+}
+
+.modal-body .regAddLeb
+{
+    color: rgb(11, 106, 89);
+    font-weight: 600;
+}
+
+.modal-body .resetregimg img
+{
+    width: 25px;
+    margin-top: 10px;
+}
+
+.modal-body .d-grid .btn7
+{
+    margin-top: 10px;
+    margin-bottom: 3%;
+}
+
+.modal-body .tncline
+{
+    font-size: 13px;
+}
+
+    
+
+

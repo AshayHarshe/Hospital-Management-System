@@ -1,0 +1,255 @@
+
+<!-- patient crud start -->
+
+<div class="container" style="margin-top: 4%;">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="fieldHead">
+          <div class="middle">
+            <div class="card1">
+              <div class="cd-body">PATIENT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-6">
+        <button type="button" class="btn btn3 btn-primary"  (click)="openPatientModal(Patienttemplate,'null')">ADD MORE</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- table no. 2 -->
+  
+  <div class="container">
+    <div class="table">
+      <table class="table table-striped text-center table-hover ">
+        <thead>
+          <tr>
+            <th scope="col">SR. NO.</th>
+            <th scope="col">NAME</th>
+            <th scope="col">AGE</th>
+            <th scope="col">DIAGNOSIS</th>
+            <th scope="col">DOCTOR</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr  *ngFor="let patient of PatientData; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{patient.name | titlecase }}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.diagnosis}}</td>
+            <td>{{patient.doctor}}</td>
+            <td>
+              <div class="btnpatient"> 
+                <button type="button" class="btn btn4  btn-warning"  (click)="openPatientModal(EditPatienttemplate,i)">Edit</button> &nbsp;&nbsp;
+                <button type="button" class="btn btn5  btn-warning"  (click)="DeletePatient(i)">Delete</button>
+            </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  <!-- * * * * * * * * * * * * * * * * Patient Template Start * * * * * * * * * * * * * * * * -->
+  
+  
+  
+  <ng-template #Patienttemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left"><i class="fa fa-heartbeat" style="font-size:35px;color:red"></i> NewLife Patient</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="patientClose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+  
+    <div class="modal-body">
+      
+      <div id="emailHelp" class="form-text">Add new Patient here with <br> <span class="ntext">  Diagnosis and Doctor.</span></div> 
+  
+      <div class="mb-2 mt-1">
+        <div class="resetregimg">
+          <img src="../assets/image/reset.png" (click)="resetPatient()" alt=""><br><br>
+         </div>
+        <input type="text" class="form-control regform" placeholder="Patient full name" [(ngModel)]="patientName">
+      </div>
+  
+      <div class="mb-3 mt-3">
+        <select class="form-select" id="sel" name="sellist"  [(ngModel)]="patientAge">
+         <option value="" disabled selected>Age in year</option>
+         <option value="01">01</option>
+         <option value="02">02</option>
+         <option value="03">03</option>
+         <option value="04">04</option>
+         <option value="05">05</option>
+         <option value="06">06</option>
+         <option value="07">07</option>
+         <option value="08">08</option>
+         <option value="09">09</option>
+         <option value="10">10</option>
+         <option value="11">11</option>
+         <option value="12">12</option>
+         <option value="13">13</option>
+         <option value="14">14</option>
+         <option value="15">15</option>
+         <option value="16">16</option>
+         <option value="17">17</option>
+         <option value="18">18</option>
+         <option value="19">19</option>
+         <option value="20">20</option>
+         <option value="21">21</option>
+         <option value="22">22</option>
+         <option value="23">23</option>
+         <option value="24">24</option>
+         <option value="25">25</option>
+         <option value="26">26</option>
+         <option value="27">27</option>
+         <option value="28">28</option>
+         <option value="29">29</option>
+         <option value="30">30</option>
+       </select>
+     </div>
+  
+     <div class="mb-3 mt-3">
+      <select class="form-select" id="sel" name="sellist"  [(ngModel)]="patientDiagnosis">
+         <option value="" disabled selected>Diagnosis</option>
+         <option value="Heart">Heart</option>
+         <option value="Brain">Brain</option>
+         <option value="Skin">Skin</option>
+         <option value="Liver">Liver</option>
+         <option value="Teeth">Teeth</option>
+         <option value="Bones">Bones</option>
+         <option value="Cancer">Cancer</option>
+     </select>
+    </div>
+  
+    <div class="mb-3 mt-3">
+      <select class="form-select" id="sel" name="sellist"  [(ngModel)]="patientDoctor">
+         <option value="" disabled selected>Doctor</option>
+         <option value="Dr. Edward">Dr. Edward</option>
+         <option value="Dr. Charlie">Dr. Charlie</option>
+         <option value="Dr. John">Dr. John</option>
+         <option value="Dr. Monk">Dr. Monk</option>
+         <option value="Dr. Harry">Dr. Harry</option>
+         <option value="Dr. Harley">Dr. Harley</option>
+         <option value="DR. George">DR. George</option>
+     </select>
+    </div>
+  
+    
+    <div class="d-grid">
+      <button type="button" class="btn btn6 btn7 btn-primary btn-block" (click)="submitPatient()">Submit</button>
+    </div>
+  
+    <div id="emailHelp" class="form-text tncline">Note : All Terms & Conditions apply*</div> 
+      
+    </div>
+  </ng-template>
+  
+  
+  
+  
+  
+  <!-- * * * * * * * * * * * * * * * * Edit Patient Template Start * * * * * * * * * * * * * * * * -->
+  
+  
+  
+  
+  <ng-template #EditPatienttemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left"><i class="fa fa-heartbeat" style="font-size:35px;color:red"></i> NewLife Patient</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="patientClose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      
+      
+      <div id="emailHelp" class="form-text">Add new Patient here with <br> <span class="ntext">  Diagnosis and Doctor.</span></div> 
+  
+      <div class="mb-2 mt-1">
+        <div class="resetregimg">
+          <img src="../assets/image/reset.png" (click)="resetPatient()" alt=""><br><br>
+         </div>
+        <input type="text" class="form-control regform" placeholder="Patient full name" [(ngModel)]="patientName">
+      </div>
+  
+      <div class="mb-3 mt-3">
+        <select class="form-select" id="sel" name="sellist"  [(ngModel)]="patientAge">
+         <option value="" disabled selected>Age in year</option>
+         <option value="01">01</option>
+         <option value="02">02</option>
+         <option value="03">03</option>
+         <option value="04">04</option>
+         <option value="05">05</option>
+         <option value="06">06</option>
+         <option value="07">07</option>
+         <option value="08">08</option>
+         <option value="09">09</option>
+         <option value="10">10</option>
+         <option value="11">11</option>
+         <option value="12">12</option>
+         <option value="13">13</option>
+         <option value="14">14</option>
+         <option value="15">15</option>
+         <option value="16">16</option>
+         <option value="17">17</option>
+         <option value="18">18</option>
+         <option value="19">19</option>
+         <option value="20">20</option>
+         <option value="21">21</option>
+         <option value="22">22</option>
+         <option value="23">23</option>
+         <option value="24">24</option>
+         <option value="25">25</option>
+         <option value="26">26</option>
+         <option value="27">27</option>
+         <option value="28">28</option>
+         <option value="29">29</option>
+         <option value="30">30</option>
+       </select>
+     </div>
+  
+     <div class="mb-3 mt-3">
+      <select class="form-select" id="sel" name="sellist"  [(ngModel)]="patientDiagnosis">
+         <option value="" disabled selected>Diagnosis</option>
+         <option value="Heart">Heart</option>
+         <option value="Brain">Brain</option>
+         <option value="Skin">Skin</option>
+         <option value="Liver">Liver</option>
+         <option value="Teeth">Teeth</option>
+         <option value="Bones">Bones</option>
+         <option value="Cancer">Cancer</option>
+     </select>
+    </div>
+  
+    <div class="mb-3 mt-3">
+      <select class="form-select" id="sel" name="sellist"  [(ngModel)]="patientDoctor">
+         <option value="" disabled selected>Doctor</option>
+         <option value="Dr. Edward">Dr. Edward</option>
+         <option value="Dr. Charlie">Dr. Charlie</option>
+         <option value="Dr. John">Dr. John</option>
+         <option value="Dr. Monk">Dr. Monk</option>
+         <option value="Dr. Harry">Dr. Harry</option>
+         <option value="Dr. Harley">Dr. Harley</option>
+         <option value="DR. George">DR. George</option>
+     </select>
+    </div>
+  
+    
+    <div class="d-grid">
+      <button type="button" class="btn btn6 btn7 btn-primary btn-block" (click)="editPatient()">Submit</button>
+    </div>
+  
+    <div id="emailHelp" class="form-text tncline">Note : All Terms & Conditions apply*</div> 
+  
+    </div>
+  </ng-template>
